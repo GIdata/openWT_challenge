@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/boats")
 public class BoatController {
     final ArrayList<Boat> boats = new ArrayList<>();

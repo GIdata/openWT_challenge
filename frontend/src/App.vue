@@ -1,20 +1,32 @@
 <script lang="ts" setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'</script>
+
+import BoatTable from "./components/BoatTable.vue";
+import AddBoatElement from "./components/AddBoatElement.vue";
+import DetailView from "./components/DetailView.vue";
+import {useStore} from "./services/Store";
+
+const store = useStore()
+store.fetchBoats()
+</script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png"/>
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite"/>
+  <h1>OpenWT Boats</h1>
+  <DetailView v-if="store.selectedBoat.boat !== null"/>
+  <div v-else>
+    <AddBoatElement/>
+    <BoatTable/>
+  </div>
 </template>
 
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding: 1em 3em;
+
+  --background-color: #e5f9ff;
+  --on-background-color: #333333;
+  --background-color-darker: #c4f0ff;
+  --warning-color: lightcoral;
 }
 </style>
