@@ -10,7 +10,10 @@ store.fetchBoats()
 </script>
 
 <template>
-  <h1>OpenWT Boats</h1>
+  <div id="header">
+    <h1>OpenWT Boats</h1>
+    <img id="anchor" alt="Anchor icon" src="./assets/anchor.svg">
+  </div>
   <DetailView v-if="store.selectedBoat.boat !== null"/>
   <div v-else>
     <AddBoatElement/>
@@ -28,5 +31,17 @@ store.fetchBoats()
   --on-background-color: #333333;
   --background-color-darker: #c4f0ff;
   --warning-color: lightcoral;
+}
+
+#header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-between;
+}
+
+#anchor {
+  height: 50px;
 }
 </style>
