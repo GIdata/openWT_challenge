@@ -10,7 +10,7 @@
     </parent>
     <groupId>ch.ineichen</groupId>
     <artifactId>openWTChallenge</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>openWTChallenge</name>
     <description>Challenge for the openWT application</description>
     <properties>
